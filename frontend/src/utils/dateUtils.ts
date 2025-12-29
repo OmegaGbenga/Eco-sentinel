@@ -10,3 +10,4 @@ export const timeAgo = (date: Date): string => {
   const seconds = Math.floor((new Date().getTime() - date.getTime()) / 1000);
   let interval = seconds / 31536000;
   if (interval > 1) return Math.floor(interval) + " years";
+  interval = seconds / 2592000;
