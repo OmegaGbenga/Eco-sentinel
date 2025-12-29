@@ -6,3 +6,4 @@ test('renders dashboard link', () => {
   const linkElement = screen.getByText(/Dashboard/i);
   expect(linkElement).toBeInTheDocument();
 });
+
