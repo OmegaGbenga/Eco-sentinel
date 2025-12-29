@@ -14,3 +14,5 @@ export const ToastContainer: React.FC = () => {
           style={{
             padding: '1rem',
             borderLeft: `4px solid ${n.type === 'success' ? '#4caf50' : n.type === 'error' ? '#f44336' : '#2196f3'}`,
+            minWidth: '250px',
+            cursor: 'pointer',
