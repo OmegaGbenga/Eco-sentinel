@@ -61,3 +61,5 @@ function App() {
       },
       redirectTo: '/',
       onFinish: () => {
+        window.location.reload();
+      },
