@@ -30,3 +30,5 @@ export const MapOverview: React.FC = () => {
                 transform: 'translate(-50%, -50%)',
                 boxShadow: '0 0 10px #00ff88'
               }} />
+            )}
+          </div>
