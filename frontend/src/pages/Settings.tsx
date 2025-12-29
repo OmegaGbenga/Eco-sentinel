@@ -23,3 +23,4 @@ export const SettingsPage: React.FC = () => {
         <label>Auto-Connect Wallet</label>
         <input type="checkbox" checked={autoConnect} onChange={e => setAutoConnect(e.target.checked)} />
       </div>
+
