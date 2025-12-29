@@ -24,3 +24,5 @@ export const MapOverview: React.FC = () => {
               <div style={{
                 width: '8px', height: '8px',
                 background: '#00ff88',
+                borderRadius: '50%',
+                position: 'absolute',
