@@ -5,3 +5,4 @@ test('renders dashboard link', () => {
   render(<Sidebar />);
   const linkElement = screen.getByText(/Dashboard/i);
   expect(linkElement).toBeInTheDocument();
+});
