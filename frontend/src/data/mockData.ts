@@ -4,3 +4,5 @@ export const generateMockData = (count: number) => {
     value: Math.floor(Math.random() * 100)
   }));
 };
+
+export const SENSOR_TYPES = ['Temperature', 'Humidity', 'Air Quality', 'Noise Level'];
