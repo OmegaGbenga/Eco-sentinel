@@ -4,3 +4,4 @@ export interface UserProfile {
   avatarUrl?: string;
   email?: string;
   bio?: string;
+  createdAt: number;
