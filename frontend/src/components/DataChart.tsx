@@ -32,3 +32,5 @@ export const DataChart: React.FC<{ data: DataPoint[], title: string }> = ({ data
         <span>Now</span>
       </div>
     </div>
+  );
+};
