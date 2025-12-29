@@ -80,3 +80,5 @@ body {
   font-family: 'Inter', system-ui, sans-serif;
   background: hsl(var(--dark-bg));
   color: hsl(var(--text-main));
+  min-height: 100vh;
+  overflow-x: hidden;
