@@ -4,3 +4,4 @@
 - Initial release
 - Dashboard
 - Wallet Connect
+- Analytics
