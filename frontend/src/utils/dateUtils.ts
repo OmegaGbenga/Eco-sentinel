@@ -18,3 +18,4 @@ export const timeAgo = (date: Date): string => {
   if (interval > 1) return Math.floor(interval) + " hours";
   interval = seconds / 60;
   if (interval > 1) return Math.floor(interval) + " minutes";
+  return Math.floor(seconds) + " seconds";
