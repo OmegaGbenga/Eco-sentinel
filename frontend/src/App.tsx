@@ -57,3 +57,5 @@ function App() {
     showConnect({
       appDetails: {
         name: 'Ecosentinel',
+        icon: window.location.origin + '/vite.svg',
+      },
