@@ -22,3 +22,5 @@ export const NotificationProvider: React.FC<{ children: React.ReactNode }> = ({ 
   const addNotification = useCallback((type: NotificationType, message: string) => {
     const id = Math.random().toString(36).substr(2, 9);
     setNotifications(prev => [...prev, { id, type, message }]);
+    setTimeout(() => removeNotification(id), 5000);
+  }, []);
