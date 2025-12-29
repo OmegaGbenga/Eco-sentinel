@@ -4,3 +4,4 @@ interface UserState {
   isAuthenticated: boolean;
   address: string | null;
   loading: boolean;
+}
