@@ -20,3 +20,5 @@ export const ConnectWalletWC: React.FC = () => {
       <input 
         type="text" 
         placeholder="wc: uri" 
+        value={uri}
+        onChange={e => setUri(e.target.value)}
