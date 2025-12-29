@@ -59,3 +59,5 @@ function App() {
         name: 'Ecosentinel',
         icon: window.location.origin + '/vite.svg',
       },
+      redirectTo: '/',
+      onFinish: () => {
