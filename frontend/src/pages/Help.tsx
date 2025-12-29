@@ -7,3 +7,4 @@ export const HelpPage: React.FC = () => {
       <div className="search-bar">
         <input type="text" placeholder="Search documentation..." style={{ padding: '1rem', width: '100%', borderRadius: '8px', border: 'none' }} />
       </div>
+      <div className="faq-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '20px', marginTop: '2rem' }}>
