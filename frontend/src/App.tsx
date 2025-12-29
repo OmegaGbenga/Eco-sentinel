@@ -50,3 +50,5 @@ function App() {
              <ChainhooksView />
           </div>
        </main>
+    </div>
+  );
