@@ -20,3 +20,4 @@ export const TransactionList: React.FC<{ transactions: Transaction[] }> = ({ tra
       ))}
     </div>
   );
+};
