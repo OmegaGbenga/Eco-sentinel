@@ -22,3 +22,5 @@ export const DataChart: React.FC<{ data: DataPoint[], title: string }> = ({ data
               borderRadius: '4px 4px 0 0',
               transition: 'height 0.3s ease',
               minWidth: '8px'
+            }}
+            title={`Value: ${point.value}`}
