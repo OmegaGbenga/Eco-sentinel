@@ -42,3 +42,5 @@ function App() {
             {!userData && <button onClick={connectWallet}>Stx Connect</button>}
             {userData && <button onClick={disconnect}>Disconnect</button>}
           </div>
+       </nav>
+       <main style={{ padding: '2rem', maxWidth: '1000px', margin: '0 auto' }}>
