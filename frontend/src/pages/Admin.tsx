@@ -12,3 +12,5 @@ export const AdminPage: React.FC = () => {
            <button>Clear Cache</button>
            <button>Reset Nodes</button>
            <button>Export Logs</button>
+        </div>
+      </div>
