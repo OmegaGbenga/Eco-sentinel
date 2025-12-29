@@ -8,3 +8,5 @@ export const MapOverview: React.FC = () => {
         <p style={{ color: 'var(--text-muted)' }}>Active Nodes: 124</p>
       </div>
       
+      {/* Abstract Map Visualization Grid */}
+      <div style={{ 
