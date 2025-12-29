@@ -10,3 +10,5 @@ export const DataChart: React.FC<{ data: DataPoint[], title: string }> = ({ data
   
   return (
     <div className="glass-card" style={{ marginTop: '20px', padding: '20px' }}>
+      <h3>{title}</h3>
+      <div style={{ display: 'flex', alignItems: 'flex-end', height: '200px', gap: '4px', paddingTop: '20px' }}>
