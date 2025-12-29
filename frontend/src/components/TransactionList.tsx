@@ -8,3 +8,4 @@ interface Transaction {
 }
 
 export const TransactionList: React.FC<{ transactions: Transaction[] }> = ({ transactions }) => {
+  return (
