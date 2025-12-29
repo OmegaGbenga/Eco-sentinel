@@ -7,3 +7,6 @@ export const SUPPORT_EMAIL = 'support@ecosentinel.io';
 export const GITHUB_URL = 'https://github.com/ecosentinel';
 export const TWITTER_URL = 'https://twitter.com/ecosentinel';
 export const DISCORD_URL = 'https://discord.gg/ecosentinel';
+export const DEFAULT_LANGUAGE = 'en';
+export const STACKS_MAINNET_ID = 1;
+export const STACKS_TESTNET_ID = 2147483648;
