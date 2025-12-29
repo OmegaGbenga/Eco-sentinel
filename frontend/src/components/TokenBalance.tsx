@@ -11,3 +11,4 @@ export const TokenBalance: React.FC<{ symbol: string, balance: string, icon: str
     </div>
   );
 };
+
