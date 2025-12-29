@@ -18,3 +18,5 @@ export const ConnectWalletWC: React.FC = () => {
     <div className="glass-card" style={{ marginTop: '1rem' }}>
       <h3>Wallet Connect (Standard)</h3>
       <input 
+        type="text" 
+        placeholder="wc: uri" 
