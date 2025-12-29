@@ -6,3 +6,4 @@ interface Transaction {
   status: 'pending' | 'success' | 'failed';
   amount: string;
 }
+
