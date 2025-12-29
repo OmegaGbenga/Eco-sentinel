@@ -26,3 +26,5 @@ function App() {
       onFinish: () => window.location.reload(),
       userSession,
     });
+  };
+
