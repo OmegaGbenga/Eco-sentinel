@@ -10,3 +10,4 @@ export const Sidebar: React.FC = () => {
             <li key={item} style={{ padding: '1rem 2rem', cursor: 'pointer', transition: 'background 0.2s' }}>
               {item}
             </li>
+          ))}
