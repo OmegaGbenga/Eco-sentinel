@@ -40,3 +40,5 @@ function App() {
           <div style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>Ecosentinel</div>
           <div>
             {!userData && <button onClick={connectWallet}>Stx Connect</button>}
+            {userData && <button onClick={disconnect}>Disconnect</button>}
+          </div>
