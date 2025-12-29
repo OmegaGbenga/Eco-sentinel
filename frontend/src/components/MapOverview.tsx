@@ -12,3 +12,5 @@ export const MapOverview: React.FC = () => {
       <div style={{ 
         display: 'grid', 
         gridTemplateColumns: 'repeat(10, 1fr)', 
+        height: '100%', 
+        opacity: 0.3 
