@@ -116,3 +116,5 @@ button {
   padding: 0.8rem 1.5rem;
   color: white;
   font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
