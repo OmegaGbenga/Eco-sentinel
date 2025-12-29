@@ -1,0 +1,37 @@
+[
+    {
+        "name": "Localization",
+        "files": [
+            {
+                "path": "frontend/src/locales/en.json",
+                "content": "{\n  \"app\": {\n    \"name\": \"Ecosentinel\",\n    \"welcome\": \"Welcome to Ecosentinel\",\n    \"description\": \"Blockchain monitoring\"\n  },\n  \"nav\": {\n    \"home\": \"Home\",\n    \"about\": \"About\",\n    \"contact\": \"Contact\"\n  },\n  \"auth\": {\n    \"login\": \"Login\",\n    \"logout\": \"Logout\",\n    \"signup\": \"Sign Up\"\n  }\n}"
+            },
+            {
+                "path": "frontend/src/locales/es.json",
+                "content": "{\n  \"app\": {\n    \"name\": \"Ecosentinel\",\n    \"welcome\": \"Bienvenido a Ecosentinel\",\n    \"description\": \"Monitoreo de blockchain\"\n  },\n  \"nav\": {\n    \"home\": \"Inicio\",\n    \"about\": \"Acerca de\",\n    \"contact\": \"Contacto\"\n  }\n}"
+            }
+        ]
+    },
+    {
+        "name": "Global Styles",
+        "files": [
+            {
+                "path": "frontend/src/styles/animations.css",
+                "content": "@keyframes fadeIn {\n  from { opacity: 0; }\n  to { opacity: 1; }\n}\n\n@keyframes slideUp {\n  from { transform: translateY(20px); opacity: 0; }\n  to { transform: translateY(0); opacity: 1; }\n}\n\n.fade-in {\n  animation: fadeIn 0.5s ease-in;\n}\n\n.slide-up {\n  animation: slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1);\n}"
+            },
+            {
+                "path": "frontend/src/styles/variables.css",
+                "content": ":root {\n  --spacing-xs: 4px;\n  --spacing-sm: 8px;\n  --spacing-md: 16px;\n  --spacing-lg: 24px;\n  --spacing-xl: 32px;\n  --font-xs: 0.75rem;\n  --font-sm: 0.875rem;\n  --font-md: 1rem;\n  --font-lg: 1.125rem;\n  --font-xl: 1.25rem;\n  --radius-sm: 4px;\n  --radius-md: 8px;\n  --radius-lg: 16px;\n}"
+            }
+        ]
+    },
+    {
+        "name": "Constants",
+        "files": [
+            {
+                "path": "frontend/src/utils/constants.ts",
+                "content": "export const APP_NAME = 'Ecosentinel';\nexport const MAX_RETRIES = 3;\nexport const TIMEOUT_MS = 5000;\nexport const DATE_FORMAT = 'YYYY-MM-DD';\nexport const API_BASE_URL = 'https://api.ecosentinel.io/v1';\nexport const SUPPORT_EMAIL = 'support@ecosentinel.io';\nexport const GITHUB_URL = 'https://github.com/ecosentinel';\nexport const TWITTER_URL = 'https://twitter.com/ecosentinel';\nexport const DISCORD_URL = 'https://discord.gg/ecosentinel';\nexport const DEFAULT_LANGUAGE = 'en';\nexport const STACKS_MAINNET_ID = 1;\nexport const STACKS_TESTNET_ID = 2147483648;"
+            }
+        ]
+    }
+]
