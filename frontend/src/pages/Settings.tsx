@@ -25,3 +25,4 @@ export const SettingsPage: React.FC = () => {
       </div>
 
       <div style={{ marginTop: '2rem' }}>
+        <button>Save Changes</button>
