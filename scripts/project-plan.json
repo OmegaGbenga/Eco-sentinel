@@ -1,37 +1,11 @@
 [
     {
-        "name": "Wallet Connect Service",
+        "name": "Dashboard Integration",
         "files": [
             {
-                "path": "frontend/src/services/walletConnectService.ts",
-                "content": "import { Core } from '@walletconnect/core';\nimport { Web3Wallet } from '@walletconnect/web3wallet';\n\nconst core = new Core({\n  projectId: 'YOUR_PROJECT_ID_HERE'\n});\n\nexport const initWalletConnect = async () => {\n  const web3wallet = await Web3Wallet.init({\n    core,\n    metadata: {\n      name: 'Ecosentinel',\n      description: 'Ecosentinel Wallet Connect',\n      url: 'https://ecosentinel.app',\n      icons: []\n    }\n  });\n  console.log('Wallet Connect Initialized');\n  return web3wallet;\n};\n\nexport const pair = async (uri: string) => {\n  const wallet = await initWalletConnect();\n  await wallet.core.pairing.pair({ uri });\n};"
-            }
-        ]
-    },
-    {
-        "name": "Chainhooks Service",
-        "files": [
-            {
-                "path": "frontend/src/services/chainhooksService.ts",
-                "content": "import { ChainhooksClient } from '@hirosystems/chainhooks-client';\n\nexport class ChainhookMonitor {\n  private client: any;\n\n  constructor() {\n    // Hypothetical usage as per requirement to implement the package\n    // The package usually runs on server, but client might consume events\n    console.log('Initializing Chainhooks Client');\n  }\n\n  public async registerPredicate(predicate: any) {\n    console.log('Registering predicate', predicate);\n    // Implementation details would go here\n  }\n\n  public async listen() {\n    console.log('Listening for events...');\n  }\n}"
-            }
-        ]
-    },
-    {
-        "name": "Chainhooks UI",
-        "files": [
-            {
-                "path": "frontend/src/components/ChainhooksView.tsx",
-                "content": "import React from 'react';\nimport { ChainhookMonitor } from '../services/chainhooksService';\n\nexport const ChainhooksView: React.FC = () => {\n  const monitor = new ChainhookMonitor();\n\n  return (\n    <div className=\"glass-card\">\n      <h3>Chainhooks Status</h3>\n      <p>Monitoring active hooks...</p>\n      <button onClick={() => monitor.listen()}>Start Listening</button>\n    </div>\n  );\n};"
-            }
-        ]
-    },
-    {
-        "name": "Wallet Connect Component",
-        "files": [
-            {
-                "path": "frontend/src/components/ConnectWalletWC.tsx",
-                "content": "import React, { useState } from 'react';\nimport { initWalletConnect, pair } from '../services/walletConnectService';\n\nexport const ConnectWalletWC: React.FC = () => {\n  const [uri, setUri] = useState('');\n\n  const handleConnect = async () => {\n    if (!uri) return;\n    try {\n      await pair(uri);\n      alert('Paired!');\n    } catch (e) {\n      console.error(e);\n    }\n  };\n\n  return (\n    <div className=\"glass-card\" style={{ marginTop: '1rem' }}>\n      <h3>Wallet Connect (Standard)</h3>\n      <input \n        type=\"text\" \n        placeholder=\"wc: uri\" \n        value={uri}\n        onChange={e => setUri(e.target.value)}\n        style={{ padding: '0.5rem', borderRadius: '4px', border: '1px solid #444', background: '#222', color: 'white', width: '100%', marginBottom: '1rem' }}\n      />\n      <button onClick={handleConnect}>Pair Wallet</button>\n    </div>\n  );\n};"
+                "path": "frontend/src/App.tsx",
+                "overwrite": true,
+                "content": "import React, { useState, useEffect } from 'react';\nimport { AppConfig, UserSession, showConnect } from '@stacks/connect';\nimport { ConnectWalletWC } from './components/ConnectWalletWC';\nimport { ChainhooksView } from './components/ChainhooksView';\n\nconst appConfig = new AppConfig(['store_write', 'publish_data']);\nconst userSession = new UserSession({ appConfig });\n\nfunction App() {\n  const [userData, setUserData] = useState<any>(null);\n\n  useEffect(() => {\n    if (userSession.isSignInPending()) {\n      userSession.handlePendingSignIn().then((userData) => {\n        setUserData(userData);\n      });\n    } else if (userSession.isUserSignedIn()) {\n      setUserData(userSession.loadUserData());\n    }\n  }, []);\n\n  const connectWallet = () => {\n    showConnect({\n      appDetails: { name: 'Ecosentinel', icon: window.location.origin + '/vite.svg' },\n      redirectTo: '/',\n      onFinish: () => window.location.reload(),\n      userSession,\n    });\n  };\n\n  const disconnect = () => {\n    userSession.signUserOut('/');\n    setUserData(null);\n  };\n\n  return (\n    <div className=\"app-container\">\n       <div className=\"gradient-bg\" />\n       <nav style={{ padding: '1rem 2rem', display: 'flex', justifyContent: 'space-between', backdropFilter: 'blur(10px)', background: 'rgba(0,0,0,0.3)' }}>\n          <div style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>Ecosentinel</div>\n          <div>\n            {!userData && <button onClick={connectWallet}>Stx Connect</button>}\n            {userData && <button onClick={disconnect}>Disconnect</button>}\n          </div>\n       </nav>\n       <main style={{ padding: '2rem', maxWidth: '1000px', margin: '0 auto' }}>\n          <h1>Dashboard</h1>\n          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>\n             <ConnectWalletWC />\n             <ChainhooksView />\n          </div>\n       </main>\n    </div>\n  );\n}\nexport default App;"
             }
         ]
     }
