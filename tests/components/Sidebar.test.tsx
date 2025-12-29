@@ -8,3 +8,4 @@ test('renders dashboard link', () => {
 });
 
 test('renders settings link', () => {
+  render(<Sidebar />);
