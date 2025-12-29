@@ -9,3 +9,4 @@ export const formatDate = (date: Date): string => {
 export const timeAgo = (date: Date): string => {
   const seconds = Math.floor((new Date().getTime() - date.getTime()) / 1000);
   let interval = seconds / 31536000;
+  if (interval > 1) return Math.floor(interval) + " years";
