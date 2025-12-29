@@ -5,3 +5,4 @@ export const SettingsPage: React.FC = () => {
   const [darkMode, setDarkMode] = useState(true);
   const [autoConnect, setAutoConnect] = useState(false);
 
+  return (
