@@ -45,3 +45,5 @@ function App() {
 
   useEffect(() => {
     if (userSession.isSignInPending()) {
+      userSession.handlePendingSignIn().then((userData) => {
+        setUserData(userData);
