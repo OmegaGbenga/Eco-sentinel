@@ -14,3 +14,4 @@ export const getTransactions = async (address: string) => {
 
 export const getBlockInfo = async (height: number) => {
   const response = await fetch(`${network.coreApiUrl}/extended/v1/block/by_height/${height}`);
+  return response.json();
