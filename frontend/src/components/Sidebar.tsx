@@ -6,3 +6,4 @@ export const Sidebar: React.FC = () => {
       <div className="logo" style={{ padding: '2rem', fontSize: '1.5rem', fontWeight: 'bold' }}>EcoSentinel</div>
       <nav>
         <ul style={{ listStyle: 'none', padding: 0 }}>
+          {['Dashboard', 'Sensors', 'Analytics', 'Settings', 'Profile'].map(item => (
