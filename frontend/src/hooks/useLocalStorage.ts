@@ -15,3 +15,4 @@ export const useLocalStorage = (key: string, initialValue: any) => {
       window.localStorage.setItem(key, JSON.stringify(valueToStore));
     } catch (error) {
       console.log(error);
+    }
