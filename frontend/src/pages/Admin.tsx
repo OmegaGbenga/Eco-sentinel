@@ -10,3 +10,5 @@ export const AdminPage: React.FC = () => {
         <h2>System Administration</h2>
         <div style={{ display: 'flex', gap: '1rem', marginTop: '1rem' }}>
            <button>Clear Cache</button>
+           <button>Reset Nodes</button>
+           <button>Export Logs</button>
