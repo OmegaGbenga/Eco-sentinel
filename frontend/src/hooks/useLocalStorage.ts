@@ -8,3 +8,7 @@ export const useLocalStorage = (key: string, initialValue: any) => {
       return initialValue;
     }
   });
+  const setValue = (value: any) => {
+    try {
+      const valueToStore = value instanceof Function ? value(storedValue) : value;
+      setStoredValue(valueToStore);
