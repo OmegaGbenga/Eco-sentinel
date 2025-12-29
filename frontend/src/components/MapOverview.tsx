@@ -10,3 +10,5 @@ export const MapOverview: React.FC = () => {
       
       {/* Abstract Map Visualization Grid */}
       <div style={{ 
+        display: 'grid', 
+        gridTemplateColumns: 'repeat(10, 1fr)', 
