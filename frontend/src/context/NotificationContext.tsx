@@ -14,3 +14,5 @@ interface NotificationContextType {
   removeNotification: (id: string) => void;
 }
 
+const NotificationContext = createContext<NotificationContextType | undefined>(undefined);
+
