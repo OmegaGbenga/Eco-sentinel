@@ -6,3 +6,4 @@ export const SettingsPage: React.FC = () => {
   const [autoConnect, setAutoConnect] = useState(false);
 
   return (
+    <div className="settings-page glass-card" style={{ padding: '2rem', maxWidth: '600px', margin: '0 auto' }}>
