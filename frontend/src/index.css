@@ -124,3 +124,5 @@ button {
 button:hover {
   opacity: 0.9;
   transform: scale(1.02);
+  box-shadow: 0 0 15px hsl(var(--primary) / 0.5);
+}
