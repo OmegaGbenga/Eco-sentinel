@@ -3,3 +3,10 @@
     "name": "Ecosentinel",
     "welcome": "Ecosentinel에 오신 것을 환영합니다",
     "description": "블록체인 모니터링"
+  },
+  "nav": {
+    "home": "홈",
+    "about": "약",
+    "contact": "접촉"
+  }
+}
