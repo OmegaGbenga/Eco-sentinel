@@ -5,3 +5,4 @@ export interface UserProfile {
   email?: string;
   bio?: string;
   createdAt: number;
+  preferences: {
