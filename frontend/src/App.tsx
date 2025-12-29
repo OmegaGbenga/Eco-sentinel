@@ -67,3 +67,5 @@ function App() {
     });
   };
 
+  const disconnect = () => {
+    userSession.signUserOut('/');
