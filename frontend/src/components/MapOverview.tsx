@@ -16,3 +16,5 @@ export const MapOverview: React.FC = () => {
         opacity: 0.3 
       }}>
         {Array.from({ length: 100 }).map((_, i) => (
+          <div key={i} style={{
+            border: '1px solid rgba(255,255,255,0.05)',
