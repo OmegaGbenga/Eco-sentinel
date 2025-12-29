@@ -8,3 +8,4 @@ interface UserState {
 
 const initialState: UserState = {
   isAuthenticated: false,
+  address: null,
