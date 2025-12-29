@@ -48,3 +48,5 @@ function App() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
              <ConnectWalletWC />
              <ChainhooksView />
+          </div>
+       </main>
