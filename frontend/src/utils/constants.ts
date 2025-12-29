@@ -1,0 +1,8 @@
+export const APP_NAME = 'Ecosentinel';
+export const MAX_RETRIES = 3;
+export const TIMEOUT_MS = 5000;
+export const DATE_FORMAT = 'YYYY-MM-DD';
+export const API_BASE_URL = 'https://api.ecosentinel.io/v1';
+export const SUPPORT_EMAIL = 'support@ecosentinel.io';
+export const GITHUB_URL = 'https://github.com/ecosentinel';
+export const TWITTER_URL = 'https://twitter.com/ecosentinel';
