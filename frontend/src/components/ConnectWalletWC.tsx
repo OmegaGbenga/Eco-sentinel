@@ -6,3 +6,5 @@ export const ConnectWalletWC: React.FC = () => {
 
   const handleConnect = async () => {
     if (!uri) return;
+    try {
+      await pair(uri);
