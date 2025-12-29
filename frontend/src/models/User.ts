@@ -9,3 +9,4 @@ export interface UserProfile {
     theme: 'light' | 'dark';
     notifications: boolean;
   };
+}
