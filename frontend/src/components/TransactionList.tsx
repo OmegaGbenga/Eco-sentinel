@@ -7,3 +7,4 @@ interface Transaction {
   amount: string;
 }
 
+export const TransactionList: React.FC<{ transactions: Transaction[] }> = ({ transactions }) => {
