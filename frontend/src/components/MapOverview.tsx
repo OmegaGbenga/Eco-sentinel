@@ -22,3 +22,5 @@ export const MapOverview: React.FC = () => {
           }}>
             {Math.random() > 0.9 && (
               <div style={{
+                width: '8px', height: '8px',
+                background: '#00ff88',
