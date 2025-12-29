@@ -1,0 +1,58 @@
+[
+    {
+        "name": "Component - Table",
+        "files": [
+            {
+                "path": "frontend/src/components/ui/Table.tsx",
+                "content": "import React from 'react';\nexport const Table: React.FC<any> = ({ children }) => <table className='table'>{children}</table>;"
+            },
+            {
+                "path": "frontend/src/components/ui/Thead.tsx",
+                "content": "import React from 'react';\nexport const Thead: React.FC<any> = ({ children }) => <thead>{children}</thead>;"
+            },
+            {
+                "path": "frontend/src/components/ui/Tbody.tsx",
+                "content": "import React from 'react';\nexport const Tbody: React.FC<any> = ({ children }) => <tbody>{children}</tbody>;"
+            },
+            {
+                "path": "frontend/src/components/ui/Tr.tsx",
+                "content": "import React from 'react';\nexport const Tr: React.FC<any> = ({ children }) => <tr>{children}</tr>;"
+            },
+            {
+                "path": "frontend/src/components/ui/Th.tsx",
+                "content": "import React from 'react';\nexport const Th: React.FC<any> = ({ children }) => <th>{children}</th>;"
+            },
+            {
+                "path": "frontend/src/components/ui/Td.tsx",
+                "content": "import React from 'react';\nexport const Td: React.FC<any> = ({ children }) => <td>{children}</td>;"
+            }
+        ]
+    },
+    {
+        "name": "Docs - Contributing",
+        "files": [
+            {
+                "path": "CONTRIBUTING.md",
+                "content": "# Contributing to EcoSentinel\n\n1. Fork the repo\n2. Create a branch\n3. Commit your changes\n4. Push to the branch\n5. Create a Pull Request"
+            }
+        ]
+    },
+    {
+        "name": "Docs - Changelog",
+        "files": [
+            {
+                "path": "CHANGELOG.md",
+                "content": "# Changelog\n\n## 1.0.0\n- Initial release\n- Dashboard\n- Wallet Connect\n- Analytics"
+            }
+        ]
+    },
+    {
+        "name": "Docs - License",
+        "files": [
+            {
+                "path": "LICENSE",
+                "content": "MIT License\n\nCopyright (c) 2025 EcoSentinel\n\nPermission is hereby granted..."
+            }
+        ]
+    }
+]
