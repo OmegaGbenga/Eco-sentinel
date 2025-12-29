@@ -7,3 +7,4 @@ export interface UserProfile {
   createdAt: number;
   preferences: {
     theme: 'light' | 'dark';
+    notifications: boolean;
