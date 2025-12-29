@@ -6,3 +6,5 @@ export const ChainhooksView: React.FC = () => {
 
   return (
     <div className="glass-card">
+      <h3>Chainhooks Status</h3>
+      <p>Monitoring active hooks...</p>
