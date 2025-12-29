@@ -29,3 +29,4 @@ const userSlice = createSlice({
 });
 
 export const { setAuthenticated, setAddress, setLoading } = userSlice.actions;
+export default userSlice.reducer;
