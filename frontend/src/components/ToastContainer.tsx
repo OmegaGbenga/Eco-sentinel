@@ -10,3 +10,5 @@ export const ToastContainer: React.FC = () => {
         <div 
           key={n.id} 
           onClick={() => removeNotification(n.id)}
+          className="glass-card"
+          style={{
