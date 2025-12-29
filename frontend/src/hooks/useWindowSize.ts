@@ -12,3 +12,4 @@ export function useWindowSize() {
   });
 
   useEffect(() => {
+    function handleResize() {
