@@ -16,3 +16,5 @@ export const AdminPage: React.FC = () => {
       </div>
       
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
+        <DataChart data={generateMockData(24)} title="Network Traffic" />
+        <DataChart data={generateMockData(24)} title="Gas Consumption" />
