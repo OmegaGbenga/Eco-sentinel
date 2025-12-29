@@ -7,3 +7,4 @@ export interface Block {
   miner: string;
   reward: number;
   difficulty: number;
+}
