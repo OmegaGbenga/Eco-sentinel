@@ -51,3 +51,5 @@ function App() {
     } else if (userSession.isUserSignedIn()) {
       setUserData(userSession.loadUserData());
     }
+  }, []);
+
