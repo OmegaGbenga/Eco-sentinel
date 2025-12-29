@@ -5,3 +5,4 @@ export interface Block {
   timestamp: number;
   txCount: number;
   miner: string;
+  reward: number;
