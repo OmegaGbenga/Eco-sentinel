@@ -18,3 +18,5 @@ function App() {
       setUserData(userSession.loadUserData());
     }
   }, []);
+
+  const connectWallet = () => {
