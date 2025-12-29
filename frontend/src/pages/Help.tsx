@@ -20,3 +20,4 @@ export const HelpPage: React.FC = () => {
           <h4>API Reference</h4>
           <p>Detailed documentation for developers building on Ecosentinel.</p>
         </div>
+      </div>
