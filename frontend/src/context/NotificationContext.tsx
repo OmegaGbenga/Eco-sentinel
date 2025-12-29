@@ -10,3 +10,5 @@ interface Notification {
 
 interface NotificationContextType {
   notifications: Notification[];
+  addNotification: (type: NotificationType, message: string) => void;
+  removeNotification: (id: string) => void;
