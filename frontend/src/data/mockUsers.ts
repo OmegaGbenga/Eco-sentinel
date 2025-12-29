@@ -3,3 +3,4 @@ export const MOCK_USERS = [
   { id: 2, name: 'Bob', role: 'User' },
   { id: 3, name: 'Charlie', role: 'User' },
   { id: 4, name: 'Dave', role: 'Moderator' },
+  { id: 5, name: 'Eve', role: 'User' }
