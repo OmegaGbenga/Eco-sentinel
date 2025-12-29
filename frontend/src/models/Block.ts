@@ -4,3 +4,4 @@ export interface Block {
   parentHash: string;
   timestamp: number;
   txCount: number;
+  miner: string;
