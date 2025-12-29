@@ -20,3 +20,4 @@ const userSlice = createSlice({
       state.isAuthenticated = action.payload;
     },
     setAddress(state, action: PayloadAction<string>) {
+      state.address = action.payload;
