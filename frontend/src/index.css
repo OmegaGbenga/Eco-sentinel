@@ -68,3 +68,5 @@ button:focus-visible {
 }
 :root {
   --primary: 250 100% 65%;
+  --secondary: 180 100% 40%;
+  --dark-bg: 240 10% 10%;
