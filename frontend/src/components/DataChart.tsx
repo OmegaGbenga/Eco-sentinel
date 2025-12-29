@@ -30,3 +30,5 @@ export const DataChart: React.FC<{ data: DataPoint[], title: string }> = ({ data
       <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '10px', color: 'var(--text-muted)', fontSize: '0.8rem' }}>
         <span>Past 24h</span>
         <span>Now</span>
+      </div>
+    </div>
