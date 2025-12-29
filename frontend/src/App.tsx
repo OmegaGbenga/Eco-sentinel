@@ -79,3 +79,15 @@ function App() {
         <h1 style={{ fontSize: '2rem', fontWeight: 'bold', background: 'linear-gradient(to right, #fff, #aaa)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
           Ecosentinel
         </h1>
+        {userData ? (
+          <button onClick={disconnect}>Disconnect</button>
+        ) : (
+          <button onClick={connectWallet}>Connect Wallet</button>
+        )}
+      </header>
+
+      <main style={{ maxWidth: '1200px', margin: '0 auto', padding: '2rem' }}>
+        <div className="glass-card">
+          <h2>Welcome to Ecosentinel</h2>
+          <p style={{ color: 'var(--text-muted)', lineHeight: '1.6' }}>
+            The next generation of blockchain monitoring and interaction.
