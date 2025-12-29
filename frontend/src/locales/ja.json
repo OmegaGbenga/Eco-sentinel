@@ -1,0 +1,12 @@
+{
+  "app": {
+    "name": "Ecosentinel",
+    "welcome": "Ecosentinelへようこそ",
+    "description": "ブロックチェーン監視"
+  },
+  "nav": {
+    "home": "ホーム",
+    "about": "約",
+    "contact": "接触"
+  }
+}
