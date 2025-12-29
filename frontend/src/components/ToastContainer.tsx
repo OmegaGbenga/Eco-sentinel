@@ -18,3 +18,5 @@ export const ToastContainer: React.FC = () => {
             cursor: 'pointer',
             animation: 'slideIn 0.3s ease'
           }}
+        >
+          {n.message}
