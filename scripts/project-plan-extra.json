@@ -1,0 +1,42 @@
+[
+    {
+        "name": "Data Models",
+        "files": [
+            {
+                "path": "frontend/src/models/User.ts",
+                "content": "export interface UserProfile {\n  stxAddress: string;\n  domainName?: string;\n  avatarUrl?: string;\n  email?: string;\n  bio?: string;\n  createdAt: number;\n  preferences: {\n    theme: 'light' | 'dark';\n    notifications: boolean;\n  };\n}"
+            },
+            {
+                "path": "frontend/src/models/Block.ts",
+                "content": "export interface Block {\n  height: number;\n  hash: string;\n  parentHash: string;\n  timestamp: number;\n  txCount: number;\n  miner: string;\n  reward: number;\n  difficulty: number;\n}"
+            }
+        ]
+    },
+    {
+        "name": "API Services",
+        "files": [
+            {
+                "path": "frontend/src/api/stacksApi.ts",
+                "content": "import { StacksMainnet } from '@stacks/network';\n\nconst network = new StacksMainnet();\n\nexport const getAccountBalances = async (address: string) => {\n  const response = await fetch(`${network.coreApiUrl}/extended/v1/address/${address}/balances`);\n  return response.json();\n};\n\nexport const getTransactions = async (address: string) => {\n  const response = await fetch(`${network.coreApiUrl}/extended/v1/address/${address}/transactions`);\n  return response.json();\n};\n\nexport const getBlockInfo = async (height: number) => {\n  const response = await fetch(`${network.coreApiUrl}/extended/v1/block/by_height/${height}`);\n  return response.json();\n};"
+            }
+        ]
+    },
+    {
+        "name": "State Management",
+        "files": [
+            {
+                "path": "frontend/src/store/userSlice.ts",
+                "content": "import { createSlice, PayloadAction } from '@reduxjs/toolkit';\n\ninterface UserState {\n  isAuthenticated: boolean;\n  address: string | null;\n  loading: boolean;\n}\n\nconst initialState: UserState = {\n  isAuthenticated: false,\n  address: null,\n  loading: false,\n};\n\nconst userSlice = createSlice({\n  name: 'user',\n  initialState,\n  reducers: {\n    setAuthenticated(state, action: PayloadAction<boolean>) {\n      state.isAuthenticated = action.payload;\n    },\n    setAddress(state, action: PayloadAction<string>) {\n      state.address = action.payload;\n    },\n    setLoading(state, action: PayloadAction<boolean>) {\n      state.loading = action.payload;\n    },\n  },\n});\n\nexport const { setAuthenticated, setAddress, setLoading } = userSlice.actions;\nexport default userSlice.reducer;"
+            }
+        ]
+    },
+    {
+        "name": "Unit Tests",
+        "files": [
+            {
+                "path": "tests/components/Sidebar.test.tsx",
+                "content": "import { render, screen } from '@testing-library/react';\nimport { Sidebar } from '../../frontend/src/components/Sidebar';\n\ntest('renders dashboard link', () => {\n  render(<Sidebar />);\n  const linkElement = screen.getByText(/Dashboard/i);\n  expect(linkElement).toBeInTheDocument();\n});\n\ntest('renders settings link', () => {\n  render(<Sidebar />);\n  const linkElement = screen.getByText(/Settings/i);\n  expect(linkElement).toBeInTheDocument();\n});"
+            }
+        ]
+    }
+]
