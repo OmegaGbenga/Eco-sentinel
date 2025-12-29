@@ -6,3 +6,4 @@ interface WindowSize {
 }
 
 export function useWindowSize() {
+  const [windowSize, setWindowSize] = useState<WindowSize>({
