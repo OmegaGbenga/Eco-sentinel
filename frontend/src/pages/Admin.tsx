@@ -8,3 +8,5 @@ export const AdminPage: React.FC = () => {
     <div className="admin-container" style={{ padding: '2rem' }}>
       <div className="glass-card" style={{ marginBottom: '2rem' }}>
         <h2>System Administration</h2>
+        <div style={{ display: 'flex', gap: '1rem', marginTop: '1rem' }}>
+           <button>Clear Cache</button>
