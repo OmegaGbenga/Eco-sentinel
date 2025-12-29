@@ -14,3 +14,5 @@ export const MapOverview: React.FC = () => {
         gridTemplateColumns: 'repeat(10, 1fr)', 
         height: '100%', 
         opacity: 0.3 
+      }}>
+        {Array.from({ length: 100 }).map((_, i) => (
