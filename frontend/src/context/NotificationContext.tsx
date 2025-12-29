@@ -8,3 +8,5 @@ interface Notification {
   message: string;
 }
 
+interface NotificationContextType {
+  notifications: Notification[];
