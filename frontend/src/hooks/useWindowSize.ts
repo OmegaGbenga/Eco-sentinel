@@ -23,3 +23,4 @@ export function useWindowSize() {
     handleResize();
     
     return () => window.removeEventListener("resize", handleResize);
+  }, []);
