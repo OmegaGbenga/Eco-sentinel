@@ -38,3 +38,5 @@ function App() {
        <div className="gradient-bg" />
        <nav style={{ padding: '1rem 2rem', display: 'flex', justifyContent: 'space-between', backdropFilter: 'blur(10px)', background: 'rgba(0,0,0,0.3)' }}>
           <div style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>Ecosentinel</div>
+          <div>
+            {!userData && <button onClick={connectWallet}>Stx Connect</button>}
