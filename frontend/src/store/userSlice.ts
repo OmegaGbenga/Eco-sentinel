@@ -6,3 +6,4 @@ interface UserState {
   loading: boolean;
 }
 
+const initialState: UserState = {
