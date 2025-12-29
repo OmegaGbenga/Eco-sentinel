@@ -69,3 +69,5 @@ function App() {
 
   const disconnect = () => {
     userSession.signUserOut('/');
+    setUserData(null);
+  };
