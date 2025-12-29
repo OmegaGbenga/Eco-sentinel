@@ -22,3 +22,4 @@ export const SettingsPage: React.FC = () => {
       <div className="setting-item" style={{ display: 'flex', justifyContent: 'space-between', padding: '1rem 0' }}>
         <label>Auto-Connect Wallet</label>
         <input type="checkbox" checked={autoConnect} onChange={e => setAutoConnect(e.target.checked)} />
+      </div>
