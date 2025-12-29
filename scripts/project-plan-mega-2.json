@@ -1,0 +1,92 @@
+[
+    {
+        "name": "I18N - French",
+        "files": [
+            {
+                "path": "frontend/src/locales/fr.json",
+                "content": "{\n  \"app\": {\n    \"name\": \"Ecosentinel\",\n    \"welcome\": \"Bienvenue à Ecosentinel\",\n    \"description\": \"Surveillance de la blockchain\"\n  },\n  \"nav\": {\n    \"home\": \"Accueil\",\n    \"about\": \"À propos\",\n    \"contact\": \"Contact\"\n  }\n}"
+            }
+        ]
+    },
+    {
+        "name": "I18N - German",
+        "files": [
+            {
+                "path": "frontend/src/locales/de.json",
+                "content": "{\n  \"app\": {\n    \"name\": \"Ecosentinel\",\n    \"welcome\": \"Willkommen bei Ecosentinel\",\n    \"description\": \"Blockchain-Überwachung\"\n  },\n  \"nav\": {\n    \"home\": \"Startseite\",\n    \"about\": \"Über\",\n    \"contact\": \"Kontakt\"\n  }\n}"
+            }
+        ]
+    },
+    {
+        "name": "I18N - Japanese",
+        "files": [
+            {
+                "path": "frontend/src/locales/ja.json",
+                "content": "{\n  \"app\": {\n    \"name\": \"Ecosentinel\",\n    \"welcome\": \"Ecosentinelへようこそ\",\n    \"description\": \"ブロックチェーン監視\"\n  },\n  \"nav\": {\n    \"home\": \"ホーム\",\n    \"about\": \"約\",\n    \"contact\": \"接触\"\n  }\n}"
+            }
+        ]
+    },
+    {
+        "name": "I18N - Korean",
+        "files": [
+            {
+                "path": "frontend/src/locales/ko.json",
+                "content": "{\n  \"app\": {\n    \"name\": \"Ecosentinel\",\n    \"welcome\": \"Ecosentinel에 오신 것을 환영합니다\",\n    \"description\": \"블록체인 모니터링\"\n  },\n  \"nav\": {\n    \"home\": \"홈\",\n    \"about\": \"약\",\n    \"contact\": \"접촉\"\n  }\n}"
+            }
+        ]
+    },
+    {
+        "name": "I18N - Chinese",
+        "files": [
+            {
+                "path": "frontend/src/locales/zh.json",
+                "content": "{\n  \"app\": {\n    \"name\": \"Ecosentinel\",\n    \"welcome\": \"欢迎来到 Ecosentinel\",\n    \"description\": \"区块链监控\"\n  },\n  \"nav\": {\n    \"home\": \"家\",\n    \"about\": \"关于\",\n    \"contact\": \"联系\"\n  }\n}"
+            }
+        ]
+    },
+    {
+        "name": "Mock - Users",
+        "files": [
+            {
+                "path": "frontend/src/data/mockUsers.ts",
+                "content": "export const MOCK_USERS = [\n  { id: 1, name: 'Alice', role: 'Admin' },\n  { id: 2, name: 'Bob', role: 'User' },\n  { id: 3, name: 'Charlie', role: 'User' },\n  { id: 4, name: 'Dave', role: 'Moderator' },\n  { id: 5, name: 'Eve', role: 'User' }\n];"
+            }
+        ]
+    },
+    {
+        "name": "Mock - Transactions",
+        "files": [
+            {
+                "path": "frontend/src/data/mockTransactions.ts",
+                "content": "export const MOCK_TXS = [\n  { id: 'tx_1', amount: 100, status: 'confirmed' },\n  { id: 'tx_2', amount: 200, status: 'pending' },\n  { id: 'tx_3', amount: 50, status: 'failed' },\n  { id: 'tx_4', amount: 300, status: 'confirmed' },\n  { id: 'tx_5', amount: 150, status: 'confirmed' }\n];"
+            }
+        ]
+    },
+    {
+        "name": "Mock - Sensors",
+        "files": [
+            {
+                "path": "frontend/src/data/mockSensors.ts",
+                "content": "export const MOCK_SENSORS = [\n  { id: 's_1', type: 'Temp', value: 24 },\n  { id: 's_2', type: 'Humidity', value: 60 },\n  { id: 's_3', type: 'CO2', value: 400 },\n  { id: 's_4', type: 'Pressure', value: 1013 },\n  { id: 's_5', type: 'Wind', value: 12 }\n];"
+            }
+        ]
+    },
+    {
+        "name": "Mock - Alerts",
+        "files": [
+            {
+                "path": "frontend/src/data/mockAlerts.ts",
+                "content": "export const MOCK_ALERTS = [\n  { id: 1, level: 'High', msg: 'Temp too high' },\n  { id: 2, level: 'Low', msg: 'Battery low' },\n  { id: 3, level: 'Info', msg: 'Update available' },\n  { id: 4, level: 'Medium', msg: 'Connection unstable' },\n  { id: 5, level: 'High', msg: 'Unauthorized access' }\n];"
+            }
+        ]
+    },
+    {
+        "name": "Config - App",
+        "files": [
+            {
+                "path": "frontend/src/config/appConfig.ts",
+                "content": "export const APP_CONFIG = {\n  version: '1.0.0',\n  env: 'production',\n  maxRetries: 5,\n  timeout: 10000,\n  cacheDuration: 3600,\n  features: { darkmode: true, beta: false }\n};"
+            }
+        ]
+    }
+]
