@@ -62,7 +62,7 @@ async function executeFeature(feature) {
         // Let's assume for this "Setup" phase, files are mostly new.
 
         let chunk = [];
-        const chunkSize = 2; // VERY GRANULAR
+        const chunkSize = 1; // MAXIMUM GRANULARITY
 
         for (let i = 0; i < lines.length; i++) {
             chunk.push(lines[i]);
