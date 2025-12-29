@@ -34,3 +34,5 @@ function App() {
   };
 
   return (
+    <div className="app-container">
+       <div className="gradient-bg" />
