@@ -28,3 +28,4 @@ const userSlice = createSlice({
   },
 });
 
+export const { setAuthenticated, setAddress, setLoading } = userSlice.actions;
