@@ -16,3 +16,5 @@ export const ConnectWalletWC: React.FC = () => {
 
   return (
     <div className="glass-card" style={{ marginTop: '1rem' }}>
+      <h3>Wallet Connect (Standard)</h3>
+      <input 
