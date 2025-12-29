@@ -7,3 +7,4 @@ test('renders dashboard link', () => {
   expect(linkElement).toBeInTheDocument();
 });
 
+test('renders settings link', () => {
