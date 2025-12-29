@@ -12,3 +12,4 @@ export const getTransactions = async (address: string) => {
   return response.json();
 };
 
+export const getBlockInfo = async (height: number) => {
