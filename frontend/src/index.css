@@ -82,3 +82,5 @@ body {
   color: hsl(var(--text-main));
   min-height: 100vh;
   overflow-x: hidden;
+}
+
