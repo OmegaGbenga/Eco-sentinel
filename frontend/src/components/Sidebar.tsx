@@ -12,3 +12,4 @@ export const Sidebar: React.FC = () => {
             </li>
           ))}
         </ul>
+      </nav>
