@@ -6,3 +6,4 @@ export interface UserProfile {
   bio?: string;
   createdAt: number;
   preferences: {
+    theme: 'light' | 'dark';
