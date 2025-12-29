@@ -8,3 +8,5 @@ export const ChainhooksView: React.FC = () => {
     <div className="glass-card">
       <h3>Chainhooks Status</h3>
       <p>Monitoring active hooks...</p>
+      <button onClick={() => monitor.listen()}>Start Listening</button>
+    </div>
