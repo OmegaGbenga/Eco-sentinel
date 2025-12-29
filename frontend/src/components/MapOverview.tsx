@@ -34,3 +34,5 @@ export const MapOverview: React.FC = () => {
           </div>
         ))}
       </div>
+    </div>
+  );
