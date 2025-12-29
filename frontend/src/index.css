@@ -78,3 +78,5 @@ button:focus-visible {
 body {
   margin: 0;
   font-family: 'Inter', system-ui, sans-serif;
+  background: hsl(var(--dark-bg));
+  color: hsl(var(--text-main));
