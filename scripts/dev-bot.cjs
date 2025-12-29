@@ -81,9 +81,10 @@ async function executeFeature(feature) {
     console.log(`Merged feature: ${feature.name}`);
 }
 
-const planPath = path.join(__dirname, 'project-plan.json');
+const planFile = process.argv[2] || 'project-plan.json';
+const planPath = path.join(__dirname, planFile);
 if (fs.existsSync(planPath)) {
-    const plan = require('./project-plan.json');
+    const plan = require(`./${planFile}`);
     (async () => {
         for (const feature of plan) {
             await executeFeature(feature);
