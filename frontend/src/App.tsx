@@ -22,3 +22,5 @@ function App() {
   const connectWallet = () => {
     showConnect({
       appDetails: { name: 'Ecosentinel', icon: window.location.origin + '/vite.svg' },
+      redirectTo: '/',
+      onFinish: () => window.location.reload(),
