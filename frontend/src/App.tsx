@@ -53,3 +53,5 @@ function App() {
     }
   }, []);
 
+  const connectWallet = () => {
+    showConnect({
