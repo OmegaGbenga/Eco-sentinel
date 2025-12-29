@@ -11,3 +11,4 @@ const initialState: UserState = {
   address: null,
   loading: false,
 };
+
