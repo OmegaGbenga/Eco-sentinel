@@ -24,3 +24,5 @@ export const DataChart: React.FC<{ data: DataPoint[], title: string }> = ({ data
               minWidth: '8px'
             }}
             title={`Value: ${point.value}`}
+          />
+        ))}
