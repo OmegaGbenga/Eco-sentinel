@@ -5,3 +5,4 @@ interface WindowSize {
   height: number | undefined;
 }
 
+export function useWindowSize() {
