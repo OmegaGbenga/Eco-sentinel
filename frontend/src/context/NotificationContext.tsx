@@ -30,3 +30,5 @@ export const NotificationProvider: React.FC<{ children: React.ReactNode }> = ({ 
   }, []);
 
   return (
+    <NotificationContext.Provider value={{ notifications, addNotification, removeNotification }}>
+      {children}
