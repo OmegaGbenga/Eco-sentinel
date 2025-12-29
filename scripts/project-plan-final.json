@@ -1,0 +1,49 @@
+[
+    {
+        "name": "UI Icons Set",
+        "files": [
+            {
+                "path": "frontend/src/components/icons/IconUser.tsx",
+                "content": "import React from 'react';\nexport const IconUser = () => (\n  <svg viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" stroke=\"currentColor\" strokeWidth=\"2\" fill=\"none\">\n    <path d=\"M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2\" />\n    <circle cx=\"12\" cy=\"7\" r=\"4\" />\n  </svg>\n);"
+            },
+            {
+                "path": "frontend/src/components/icons/IconSettings.tsx",
+                "content": "import React from 'react';\nexport const IconSettings = () => (\n  <svg viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" stroke=\"currentColor\" strokeWidth=\"2\" fill=\"none\">\n    <circle cx=\"12\" cy=\"12\" r=\"3\" />\n    <path d=\"M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z\" />\n  </svg>\n);"
+            },
+            {
+                "path": "frontend/src/components/icons/IconActivity.tsx",
+                "content": "import React from 'react';\nexport const IconActivity = () => (\n  <svg viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" stroke=\"currentColor\" strokeWidth=\"2\" fill=\"none\">\n    <polyline points=\"22 12 18 12 15 21 9 3 6 12 2 12\" />\n  </svg>\n);"
+            },
+            {
+                "path": "frontend/src/components/icons/IconHome.tsx",
+                "content": "import React from 'react';\nexport const IconHome = () => (\n  <svg viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" stroke=\"currentColor\" strokeWidth=\"2\" fill=\"none\">\n    <path d=\"M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z\" />\n    <polyline points=\"9 22 9 12 15 12 15 22\" />\n  </svg>\n);"
+            }
+        ]
+    },
+    {
+        "name": "Custom Hooks Library",
+        "files": [
+            {
+                "path": "frontend/src/hooks/useDebounce.ts",
+                "content": "import { useState, useEffect } from 'react';\n\nexport function useDebounce<T>(value: T, delay: number): T {\n  const [debouncedValue, setDebouncedValue] = useState<T>(value);\n\n  useEffect(() => {\n    const handler = setTimeout(() => {\n      setDebouncedValue(value);\n    }, delay);\n\n    return () => {\n      clearTimeout(handler);\n    };\n  }, [value, delay]);\n\n  return debouncedValue;\n}"
+            },
+            {
+                "path": "frontend/src/hooks/useWindowSize.ts",
+                "content": "import { useState, useEffect } from 'react';\n\ninterface WindowSize {\n  width: number | undefined;\n  height: number | undefined;\n}\n\nexport function useWindowSize() {\n  const [windowSize, setWindowSize] = useState<WindowSize>({\n    width: undefined,\n    height: undefined,\n  });\n\n  useEffect(() => {\n    function handleResize() {\n      setWindowSize({\n        width: window.innerWidth,\n        height: window.innerHeight,\n      });\n    }\n    \n    window.addEventListener(\"resize\", handleResize);\n    handleResize();\n    \n    return () => window.removeEventListener(\"resize\", handleResize);\n  }, []);\n\n  return windowSize;\n}"
+            }
+        ]
+    },
+    {
+        "name": "Utility Functions",
+        "files": [
+            {
+                "path": "frontend/src/utils/dateUtils.ts",
+                "content": "export const formatDate = (date: Date): string => {\n  return new Intl.DateTimeFormat('en-US', {\n    year: 'numeric',\n    month: 'long',\n    day: 'numeric'\n  }).format(date);\n};\n\nexport const timeAgo = (date: Date): string => {\n  const seconds = Math.floor((new Date().getTime() - date.getTime()) / 1000);\n  let interval = seconds / 31536000;\n  if (interval > 1) return Math.floor(interval) + \" years\";\n  interval = seconds / 2592000;\n  if (interval > 1) return Math.floor(interval) + \" months\";\n  interval = seconds / 86400;\n  if (interval > 1) return Math.floor(interval) + \" days\";\n  interval = seconds / 3600;\n  if (interval > 1) return Math.floor(interval) + \" hours\";\n  interval = seconds / 60;\n  if (interval > 1) return Math.floor(interval) + \" minutes\";\n  return Math.floor(seconds) + \" seconds\";\n};"
+            },
+            {
+                "path": "frontend/src/utils/currencyUtils.ts",
+                "content": "export const formatCurrency = (amount: number, currency = 'USD'): string => {\n  return new Intl.NumberFormat('en-US', {\n    style: 'currency',\n    currency: currency,\n  }).format(amount);\n};\n\nexport const formatSTX = (microStacks: number): string => {\n  return (microStacks / 1000000).toLocaleString('en-US', { \n    minimumFractionDigits: 2, \n    maximumFractionDigits: 6 \n  }) + ' STX';\n};"
+            }
+        ]
+    }
+]

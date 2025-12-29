@@ -17,3 +17,4 @@ export const TransactionList: React.FC<{ transactions: Transaction[] }> = ({ tra
            <span style={{ color: tx.status === 'success' ? '#4caf50' : '#f44336' }}>{tx.status}</span>
            <span>{tx.amount} STX</span>
         </div>
+      ))}
