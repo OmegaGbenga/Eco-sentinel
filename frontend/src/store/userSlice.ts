@@ -12,3 +12,4 @@ const initialState: UserState = {
   loading: false,
 };
 
+const userSlice = createSlice({
