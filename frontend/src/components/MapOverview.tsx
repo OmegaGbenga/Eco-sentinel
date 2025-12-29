@@ -18,3 +18,5 @@ export const MapOverview: React.FC = () => {
         {Array.from({ length: 100 }).map((_, i) => (
           <div key={i} style={{
             border: '1px solid rgba(255,255,255,0.05)',
+            position: 'relative'
+          }}>
