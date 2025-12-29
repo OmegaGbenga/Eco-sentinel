@@ -18,3 +18,4 @@ export const SettingsPage: React.FC = () => {
         <label>Dark Mode</label>
         <input type="checkbox" checked={darkMode} onChange={e => setDarkMode(e.target.checked)} />
       </div>
+
