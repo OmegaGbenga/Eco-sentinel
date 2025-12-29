@@ -24,3 +24,4 @@ export const SettingsPage: React.FC = () => {
         <input type="checkbox" checked={autoConnect} onChange={e => setAutoConnect(e.target.checked)} />
       </div>
 
+      <div style={{ marginTop: '2rem' }}>
