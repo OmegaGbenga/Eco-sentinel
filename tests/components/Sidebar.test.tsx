@@ -10,3 +10,4 @@ test('renders dashboard link', () => {
 test('renders settings link', () => {
   render(<Sidebar />);
   const linkElement = screen.getByText(/Settings/i);
+  expect(linkElement).toBeInTheDocument();
