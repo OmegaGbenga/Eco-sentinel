@@ -40,3 +40,5 @@
   },
   "dependencies": {
     "@stacks/connect": "^7.7.0",
+    "@stacks/network": "^6.13.0",
+    "@stacks/transactions": "^6.15.0",
