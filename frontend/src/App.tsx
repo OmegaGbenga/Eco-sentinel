@@ -10,3 +10,5 @@ function App() {
   const [userData, setUserData] = useState<any>(null);
 
   useEffect(() => {
+    if (userSession.isSignInPending()) {
+      userSession.handlePendingSignIn().then((userData) => {
