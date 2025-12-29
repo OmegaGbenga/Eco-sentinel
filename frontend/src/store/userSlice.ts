@@ -26,3 +26,4 @@ const userSlice = createSlice({
       state.loading = action.payload;
     },
   },
+});
