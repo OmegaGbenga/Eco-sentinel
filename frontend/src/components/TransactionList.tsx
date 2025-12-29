@@ -18,3 +18,4 @@ export const TransactionList: React.FC<{ transactions: Transaction[] }> = ({ tra
            <span>{tx.amount} STX</span>
         </div>
       ))}
+    </div>
