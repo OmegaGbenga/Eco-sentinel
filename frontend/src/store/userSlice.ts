@@ -16,3 +16,4 @@ const userSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {
+    setAuthenticated(state, action: PayloadAction<boolean>) {
