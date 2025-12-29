@@ -6,3 +6,4 @@ export interface Block {
   txCount: number;
   miner: string;
   reward: number;
+  difficulty: number;
