@@ -5,3 +5,4 @@ export const formatCurrency = (amount: number, currency = 'USD'): string => {
   }).format(amount);
 };
 
+export const formatSTX = (microStacks: number): string => {
