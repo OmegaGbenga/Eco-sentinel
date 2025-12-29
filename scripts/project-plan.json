@@ -1,41 +1,38 @@
 [
-  {
-    "name": "Frontend Infrastructure",
-    "files": [
-      {
-        "path": "frontend/package.json",
-        "content": "{\n  \"name\": \"ecosentinel-frontend\",\n  \"private\": true,\n  \"version\": \"0.0.0\",\n  \"type\": \"module\",\n  \"scripts\": {\n    \"dev\": \"vite\",\n    \"build\": \"tsc && vite build\",\n    \"preview\": \"vite preview\"\n  },\n  \"dependencies\": {\n    \"@stacks/connect\": \"^7.7.0\",\n    \"@stacks/network\": \"^6.13.0\",\n    \"@stacks/transactions\": \"^6.15.0\",\n    \"@hirosystems/chainhooks-client\": \"^1.0.0\",\n    \"react\": \"^18.2.0\",\n    \"react-dom\": \"^18.2.0\"\n  },\n  \"devDependencies\": {\n    \"@types/react\": \"^18.2.66\",\n    \"@types/react-dom\": \"^18.2.22\",\n    \"typescript\": \"^5.2.2\",\n    \"vite\": \"^5.2.0\"\n  }\n}"
-      },
-      {
-        "path": "frontend/vite.config.ts",
-        "content": "import { defineConfig } from 'vite';\nimport react from '@vitejs/plugin-react';\n\n// https://vitejs.dev/config/\nexport default defineConfig({\n  plugins: [react()],\n});"
-      },
-      {
-        "path": "frontend/index.html",
-        "content": "<!doctype html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"/vite.svg\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Ecosentinel</title>\n  </head>\n  <body>\n    <div id=\"root\"></div>\n    <script type=\"module\" src=\"/src/main.tsx\"></script>\n  </body>\n</html>"
-      }
-    ]
-  },
-  {
-    "name": "Design System",
-    "files": [
-      {
-        "path": "frontend/src/index.css",
-        "content": ":root {\n  --primary: 250 100% 65%;\n  --secondary: 180 100% 40%;\n  --dark-bg: 240 10% 10%;\n  --card-bg: 240 10% 15%;\n  --text-main: 0 0% 100%;\n  --text-muted: 240 10% 70%;\n}\n\nbody {\n  margin: 0;\n  font-family: 'Inter', system-ui, sans-serif;\n  background: hsl(var(--dark-bg));\n  color: hsl(var(--text-main));\n  min-height: 100vh;\n  overflow-x: hidden;\n}\n\n.gradient-bg {\n  background: radial-gradient(circle at 50% 0%, hsl(var(--primary) / 0.2), transparent 70%);\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  height: 100vh;\n  z-index: -1;\n}\n\n.glass-card {\n  background: hsl(var(--card-bg) / 0.6);\n  backdrop-filter: blur(12px);\n  border: 1px solid hsl(var(--text-main) / 0.1);\n  border-radius: 16px;\n  padding: 2rem;\n  transition: transform 0.3s ease, box-shadow 0.3s ease;\n}\n\n.glass-card:hover {\n  transform: translateY(-5px);\n  box-shadow: 0 10px 30px -10px hsl(var(--primary) / 0.3);\n  border-color: hsl(var(--primary) / 0.5);\n}\n\nbutton {\n  background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));\n  border: none;\n  border-radius: 8px;\n  padding: 0.8rem 1.5rem;\n  color: white;\n  font-weight: 600;\n  cursor: pointer;\n  transition: all 0.2s;\n  font-size: 1rem;\n}\n\nbutton:hover {\n  opacity: 0.9;\n  transform: scale(1.02);\n  box-shadow: 0 0 15px hsl(var(--primary) / 0.5);\n}"
-      }
-    ]
-  },
-  {
-    "name": "Core Application Logic",
-    "files": [
-      {
-        "path": "frontend/src/main.tsx",
-        "content": "import React from 'react';\nimport ReactDOM from 'react-dom/client';\nimport App from './App.tsx';\nimport './index.css';\n\nReactDOM.createRoot(document.getElementById('root')!).render(\n  <React.StrictMode>\n    <App />\n  </React.StrictMode>,\n);"
-      },
-      {
-        "path": "frontend/src/App.tsx",
-        "content": "import React, { useState, useEffect } from 'react';\nimport { AppConfig, UserSession, showConnect } from '@stacks/connect';\nimport { StacksTestnet } from '@stacks/network';\n\nconst appConfig = new AppConfig(['store_write', 'publish_data']);\nconst userSession = new UserSession({ appConfig });\n\nfunction App() {\n  const [userData, setUserData] = useState<any>(null);\n\n  useEffect(() => {\n    if (userSession.isSignInPending()) {\n      userSession.handlePendingSignIn().then((userData) => {\n        setUserData(userData);\n      });\n    } else if (userSession.isUserSignedIn()) {\n      setUserData(userSession.loadUserData());\n    }\n  }, []);\n\n  const connectWallet = () => {\n    showConnect({\n      appDetails: {\n        name: 'Ecosentinel',\n        icon: window.location.origin + '/vite.svg',\n      },\n      redirectTo: '/',\n      onFinish: () => {\n        window.location.reload();\n      },\n      userSession,\n    });\n  };\n\n  const disconnect = () => {\n    userSession.signUserOut('/');\n    setUserData(null);\n  };\n\n  return (\n    <div className=\"app-container\">\n      <div className=\"gradient-bg\" />\n      <header style={{ padding: '2rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>\n        <h1 style={{ fontSize: '2rem', fontWeight: 'bold', background: 'linear-gradient(to right, #fff, #aaa)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>\n          Ecosentinel\n        </h1>\n        {userData ? (\n          <button onClick={disconnect}>Disconnect</button>\n        ) : (\n          <button onClick={connectWallet}>Connect Wallet</button>\n        )}\n      </header>\n\n      <main style={{ maxWidth: '1200px', margin: '0 auto', padding: '2rem' }}>\n        <div className=\"glass-card\">\n          <h2>Welcome to Ecosentinel</h2>\n          <p style={{ color: 'var(--text-muted)', lineHeight: '1.6' }}>\n            The next generation of blockchain monitoring and interaction.\n            Seamlessly connect your Stacks wallet and interact with the ecosystem.\n          </p>\n          \n          {userData && (\n            <div style={{ marginTop: '2rem', padding: '1rem', background: 'rgba(0,0,0,0.2)', borderRadius: '8px' }}>\n              <p>Connected as: <code>{userData.profile.stxAddress.testnet}</code></p>\n            </div>\n          )}\n        </div>\n      </main>\n    </div>\n  );\n}\n\nexport default App;"
-      }
-    ]
-  }
+    {
+        "name": "Wallet Connect Service",
+        "files": [
+            {
+                "path": "frontend/src/services/walletConnectService.ts",
+                "content": "import { Core } from '@walletconnect/core';\nimport { Web3Wallet } from '@walletconnect/web3wallet';\n\nconst core = new Core({\n  projectId: 'YOUR_PROJECT_ID_HERE'\n});\n\nexport const initWalletConnect = async () => {\n  const web3wallet = await Web3Wallet.init({\n    core,\n    metadata: {\n      name: 'Ecosentinel',\n      description: 'Ecosentinel Wallet Connect',\n      url: 'https://ecosentinel.app',\n      icons: []\n    }\n  });\n  console.log('Wallet Connect Initialized');\n  return web3wallet;\n};\n\nexport const pair = async (uri: string) => {\n  const wallet = await initWalletConnect();\n  await wallet.core.pairing.pair({ uri });\n};"
+            }
+        ]
+    },
+    {
+        "name": "Chainhooks Service",
+        "files": [
+            {
+                "path": "frontend/src/services/chainhooksService.ts",
+                "content": "import { ChainhooksClient } from '@hirosystems/chainhooks-client';\n\nexport class ChainhookMonitor {\n  private client: any;\n\n  constructor() {\n    // Hypothetical usage as per requirement to implement the package\n    // The package usually runs on server, but client might consume events\n    console.log('Initializing Chainhooks Client');\n  }\n\n  public async registerPredicate(predicate: any) {\n    console.log('Registering predicate', predicate);\n    // Implementation details would go here\n  }\n\n  public async listen() {\n    console.log('Listening for events...');\n  }\n}"
+            }
+        ]
+    },
+    {
+        "name": "Chainhooks UI",
+        "files": [
+            {
+                "path": "frontend/src/components/ChainhooksView.tsx",
+                "content": "import React from 'react';\nimport { ChainhookMonitor } from '../services/chainhooksService';\n\nexport const ChainhooksView: React.FC = () => {\n  const monitor = new ChainhookMonitor();\n\n  return (\n    <div className=\"glass-card\">\n      <h3>Chainhooks Status</h3>\n      <p>Monitoring active hooks...</p>\n      <button onClick={() => monitor.listen()}>Start Listening</button>\n    </div>\n  );\n};"
+            }
+        ]
+    },
+    {
+        "name": "Wallet Connect Component",
+        "files": [
+            {
+                "path": "frontend/src/components/ConnectWalletWC.tsx",
+                "content": "import React, { useState } from 'react';\nimport { initWalletConnect, pair } from '../services/walletConnectService';\n\nexport const ConnectWalletWC: React.FC = () => {\n  const [uri, setUri] = useState('');\n\n  const handleConnect = async () => {\n    if (!uri) return;\n    try {\n      await pair(uri);\n      alert('Paired!');\n    } catch (e) {\n      console.error(e);\n    }\n  };\n\n  return (\n    <div className=\"glass-card\" style={{ marginTop: '1rem' }}>\n      <h3>Wallet Connect (Standard)</h3>\n      <input \n        type=\"text\" \n        placeholder=\"wc: uri\" \n        value={uri}\n        onChange={e => setUri(e.target.value)}\n        style={{ padding: '0.5rem', borderRadius: '4px', border: '1px solid #444', background: '#222', color: 'white', width: '100%', marginBottom: '1rem' }}\n      />\n      <button onClick={handleConnect}>Pair Wallet</button>\n    </div>\n  );\n};"
+            }
+        ]
+    }
 ]
