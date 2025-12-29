@@ -3,3 +3,4 @@ export interface Block {
   hash: string;
   parentHash: string;
   timestamp: number;
+  txCount: number;
