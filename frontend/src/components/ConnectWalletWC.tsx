@@ -26,3 +26,5 @@ export const ConnectWalletWC: React.FC = () => {
       />
       <button onClick={handleConnect}>Pair Wallet</button>
     </div>
+  );
+};
