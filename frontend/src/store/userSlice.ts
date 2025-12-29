@@ -21,3 +21,4 @@ const userSlice = createSlice({
     },
     setAddress(state, action: PayloadAction<string>) {
       state.address = action.payload;
+    },
