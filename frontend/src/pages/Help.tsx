@@ -18,3 +18,4 @@ export const HelpPage: React.FC = () => {
         </div>
         <div className="glass-card">
           <h4>API Reference</h4>
+          <p>Detailed documentation for developers building on Ecosentinel.</p>
