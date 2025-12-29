@@ -10,3 +10,4 @@ export const formatSTX = (microStacks: number): string => {
     minimumFractionDigits: 2, 
     maximumFractionDigits: 6 
   }) + ' STX';
+};
