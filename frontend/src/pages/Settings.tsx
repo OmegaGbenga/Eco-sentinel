@@ -9,3 +9,4 @@ export const SettingsPage: React.FC = () => {
     <div className="settings-page glass-card" style={{ padding: '2rem', maxWidth: '600px', margin: '0 auto' }}>
       <h2>Settings</h2>
       
+      <div className="setting-item" style={{ display: 'flex', justifyContent: 'space-between', padding: '1rem 0' }}>
