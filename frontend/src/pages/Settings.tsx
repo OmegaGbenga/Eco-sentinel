@@ -12,3 +12,4 @@ export const SettingsPage: React.FC = () => {
       <div className="setting-item" style={{ display: 'flex', justifyContent: 'space-between', padding: '1rem 0' }}>
         <label>Enable Notifications</label>
         <input type="checkbox" checked={notifications} onChange={e => setNotifications(e.target.checked)} />
+      </div>
