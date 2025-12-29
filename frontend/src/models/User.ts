@@ -8,3 +8,4 @@ export interface UserProfile {
   preferences: {
     theme: 'light' | 'dark';
     notifications: boolean;
+  };
