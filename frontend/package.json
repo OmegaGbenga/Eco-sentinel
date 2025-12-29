@@ -38,3 +38,5 @@
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
+  "dependencies": {
+    "@stacks/connect": "^7.7.0",
