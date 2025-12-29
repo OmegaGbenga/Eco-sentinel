@@ -20,3 +20,5 @@ export const ToastContainer: React.FC = () => {
           }}
         >
           {n.message}
+        </div>
+      ))}
