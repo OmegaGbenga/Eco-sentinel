@@ -10,3 +10,5 @@ export const ConnectWalletWC: React.FC = () => {
       await pair(uri);
       alert('Paired!');
     } catch (e) {
+      console.error(e);
+    }
