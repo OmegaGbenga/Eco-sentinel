@@ -44,3 +44,5 @@ function App() {
           </div>
        </nav>
        <main style={{ padding: '2rem', maxWidth: '1000px', margin: '0 auto' }}>
+          <h1>Dashboard</h1>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
