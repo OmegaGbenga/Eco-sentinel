@@ -6,3 +6,4 @@ export const formatCurrency = (amount: number, currency = 'USD'): string => {
 };
 
 export const formatSTX = (microStacks: number): string => {
+  return (microStacks / 1000000).toLocaleString('en-US', { 
