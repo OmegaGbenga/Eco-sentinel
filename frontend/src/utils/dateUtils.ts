@@ -6,3 +6,4 @@ export const formatDate = (date: Date): string => {
   }).format(date);
 };
 
+export const timeAgo = (date: Date): string => {
