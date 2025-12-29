@@ -13,3 +13,4 @@ export const Sidebar: React.FC = () => {
           ))}
         </ul>
       </nav>
+    </aside>
