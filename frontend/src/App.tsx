@@ -55,3 +55,5 @@ function App() {
 
   const connectWallet = () => {
     showConnect({
+      appDetails: {
+        name: 'Ecosentinel',
