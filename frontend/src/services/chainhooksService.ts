@@ -10,3 +10,5 @@ export class ChainhookMonitor {
   }
 
   public async registerPredicate(predicate: any) {
+    console.log('Registering predicate', predicate);
+    // Implementation details would go here

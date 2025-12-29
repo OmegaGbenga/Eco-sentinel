@@ -91,3 +91,18 @@ function App() {
           <h2>Welcome to Ecosentinel</h2>
           <p style={{ color: 'var(--text-muted)', lineHeight: '1.6' }}>
             The next generation of blockchain monitoring and interaction.
+            Seamlessly connect your Stacks wallet and interact with the ecosystem.
+          </p>
+          
+          {userData && (
+            <div style={{ marginTop: '2rem', padding: '1rem', background: 'rgba(0,0,0,0.2)', borderRadius: '8px' }}>
+              <p>Connected as: <code>{userData.profile.stxAddress.testnet}</code></p>
+            </div>
+          )}
+        </div>
+      </main>
+    </div>
+  );
+}
+
+export default App;
