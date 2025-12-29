@@ -1,0 +1,47 @@
+[
+    {
+        "name": "Component - Sidebar",
+        "files": [
+            {
+                "path": "frontend/src/components/Sidebar.tsx",
+                "content": "import React from 'react';\n\nexport const Sidebar: React.FC = () => {\n  return (\n    <aside className=\"sidebar glass-card\" style={{ width: '250px', height: '100vh', position: 'fixed', left: 0, top: 0 }}>\n      <div className=\"logo\" style={{ padding: '2rem', fontSize: '1.5rem', fontWeight: 'bold' }}>EcoSentinel</div>\n      <nav>\n        <ul style={{ listStyle: 'none', padding: 0 }}>\n          {['Dashboard', 'Sensors', 'Analytics', 'Settings', 'Profile'].map(item => (\n            <li key={item} style={{ padding: '1rem 2rem', cursor: 'pointer', transition: 'background 0.2s' }}>\n              {item}\n            </li>\n          ))}\n        </ul>\n      </nav>\n    </aside>\n  );\n};\n"
+            }
+        ]
+    },
+    {
+        "name": "Component - Transaction History",
+        "files": [
+            {
+                "path": "frontend/src/components/TransactionList.tsx",
+                "content": "import React from 'react';\n\ninterface Transaction {\n  id: string;\n  hash: string;\n  status: 'pending' | 'success' | 'failed';\n  amount: string;\n}\n\nexport const TransactionList: React.FC<{ transactions: Transaction[] }> = ({ transactions }) => {\n  return (\n    <div className=\"transaction-list glass-card\">\n      <h3>Recent Activity</h3>\n      {transactions.map(tx => (\n        <div key={tx.id} style={{ display: 'flex', justifyContent: 'space-between', padding: '1rem', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>\n           <span>{tx.hash.substr(0, 10)}...</span>\n           <span style={{ color: tx.status === 'success' ? '#4caf50' : '#f44336' }}>{tx.status}</span>\n           <span>{tx.amount} STX</span>\n        </div>\n      ))}\n    </div>\n  );\n};\n"
+            }
+        ]
+    },
+    {
+        "name": "Component - Token Balances",
+        "files": [
+            {
+                "path": "frontend/src/components/TokenBalance.tsx",
+                "content": "import React from 'react';\n\nexport const TokenBalance: React.FC<{ symbol: string, balance: string, icon: string }> = ({ symbol, balance, icon }) => {\n  return (\n    <div className=\"token-card glass-card\" style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>\n      <img src={icon} alt={symbol} style={{ width: '40px', height: '40px', borderRadius: '50%' }} />\n      <div>\n        <div style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>{symbol} Balance</div>\n        <div style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>{balance}</div>\n      </div>\n    </div>\n  );\n};\n"
+            }
+        ]
+    },
+    {
+        "name": "Page - Settings",
+        "files": [
+            {
+                "path": "frontend/src/pages/Settings.tsx",
+                "content": "import React, { useState } from 'react';\n\nexport const SettingsPage: React.FC = () => {\n  const [notifications, setNotifications] = useState(true);\n  const [darkMode, setDarkMode] = useState(true);\n  const [autoConnect, setAutoConnect] = useState(false);\n\n  return (\n    <div className=\"settings-page glass-card\" style={{ padding: '2rem', maxWidth: '600px', margin: '0 auto' }}>\n      <h2>Settings</h2>\n      \n      <div className=\"setting-item\" style={{ display: 'flex', justifyContent: 'space-between', padding: '1rem 0' }}>\n        <label>Enable Notifications</label>\n        <input type=\"checkbox\" checked={notifications} onChange={e => setNotifications(e.target.checked)} />\n      </div>\n\n      <div className=\"setting-item\" style={{ display: 'flex', justifyContent: 'space-between', padding: '1rem 0' }}>\n        <label>Dark Mode</label>\n        <input type=\"checkbox\" checked={darkMode} onChange={e => setDarkMode(e.target.checked)} />\n      </div>\n\n      <div className=\"setting-item\" style={{ display: 'flex', justifyContent: 'space-between', padding: '1rem 0' }}>\n        <label>Auto-Connect Wallet</label>\n        <input type=\"checkbox\" checked={autoConnect} onChange={e => setAutoConnect(e.target.checked)} />\n      </div>\n\n      <div style={{ marginTop: '2rem' }}>\n        <button>Save Changes</button>\n      </div>\n    </div>\n  );\n};\n"
+            }
+        ]
+    },
+    {
+        "name": "Page - Help Center",
+        "files": [
+            {
+                "path": "frontend/src/pages/Help.tsx",
+                "content": "import React from 'react';\n\nexport const HelpPage: React.FC = () => {\n  return (\n    <div className=\"help-center\">\n      <h1>How can we help?</h1>\n      <div className=\"search-bar\">\n        <input type=\"text\" placeholder=\"Search documentation...\" style={{ padding: '1rem', width: '100%', borderRadius: '8px', border: 'none' }} />\n      </div>\n      <div className=\"faq-grid\" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '20px', marginTop: '2rem' }}>\n        <div className=\"glass-card\">\n          <h4>Getting Started</h4>\n          <p>Learn how to connect your wallet and set up your first sensor.</p>\n        </div>\n        <div className=\"glass-card\">\n          <h4>Troubleshooting</h4>\n          <p>Common issues and how to resolve them quickly.</p>\n        </div>\n        <div className=\"glass-card\">\n          <h4>API Reference</h4>\n          <p>Detailed documentation for developers building on Ecosentinel.</p>\n        </div>\n      </div>\n    </div>\n  );\n};\n"
+            }
+        ]
+    }
+]
