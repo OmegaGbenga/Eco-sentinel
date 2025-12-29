@@ -16,3 +16,5 @@ export const DataChart: React.FC<{ data: DataPoint[], title: string }> = ({ data
           <div 
             key={i} 
             style={{
+              flex: 1,
+              background: `linear-gradient(to top, hsl(var(--primary) / 0.8), hsl(var(--secondary) / 0.8))`,
