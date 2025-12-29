@@ -24,3 +24,5 @@ export const NotificationProvider: React.FC<{ children: React.ReactNode }> = ({ 
     setNotifications(prev => [...prev, { id, type, message }]);
     setTimeout(() => removeNotification(id), 5000);
   }, []);
+
+  const removeNotification = useCallback((id: string) => {
