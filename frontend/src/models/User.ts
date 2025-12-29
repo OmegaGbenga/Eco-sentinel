@@ -3,3 +3,4 @@ export interface UserProfile {
   domainName?: string;
   avatarUrl?: string;
   email?: string;
+  bio?: string;
