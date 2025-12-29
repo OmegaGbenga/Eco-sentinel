@@ -13,3 +13,4 @@ export const SettingsPage: React.FC = () => {
         <label>Enable Notifications</label>
         <input type="checkbox" checked={notifications} onChange={e => setNotifications(e.target.checked)} />
       </div>
+
