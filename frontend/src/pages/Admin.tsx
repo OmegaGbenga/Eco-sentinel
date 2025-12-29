@@ -20,3 +20,5 @@ export const AdminPage: React.FC = () => {
         <DataChart data={generateMockData(24)} title="Gas Consumption" />
       </div>
 
+      <ToastContainer />
+    </div>
