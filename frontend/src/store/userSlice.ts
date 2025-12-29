@@ -19,3 +19,4 @@ const userSlice = createSlice({
     setAuthenticated(state, action: PayloadAction<boolean>) {
       state.isAuthenticated = action.payload;
     },
+    setAddress(state, action: PayloadAction<string>) {
