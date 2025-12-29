@@ -72,3 +72,5 @@ button:focus-visible {
   --dark-bg: 240 10% 10%;
   --card-bg: 240 10% 15%;
   --text-main: 0 0% 100%;
+  --text-muted: 240 10% 70%;
+}
