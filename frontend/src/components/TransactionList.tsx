@@ -11,3 +11,4 @@ export const TransactionList: React.FC<{ transactions: Transaction[] }> = ({ tra
   return (
     <div className="transaction-list glass-card">
       <h3>Recent Activity</h3>
+      {transactions.map(tx => (
