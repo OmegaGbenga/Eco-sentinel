@@ -19,3 +19,4 @@ export function useWindowSize() {
       });
     }
     
+    window.addEventListener("resize", handleResize);
