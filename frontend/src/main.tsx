@@ -8,3 +8,5 @@ createRoot(document.getElementById('root')!).render(
     <App />
   </StrictMode>,
 )
+import React from 'react';
+import ReactDOM from 'react-dom/client';
