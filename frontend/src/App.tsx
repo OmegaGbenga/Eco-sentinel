@@ -1,41 +1,7 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
-function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
-
-export default App
 import React, { useState, useEffect } from 'react';
 import { AppConfig, UserSession, showConnect } from '@stacks/connect';
-import { StacksTestnet } from '@stacks/network';
+import { ConnectWalletWC } from './components/ConnectWalletWC';
+import { ChainhooksView } from './components/ChainhooksView';
 
 const appConfig = new AppConfig(['store_write', 'publish_data']);
 const userSession = new UserSession({ appConfig });
@@ -55,14 +21,9 @@ function App() {
 
   const connectWallet = () => {
     showConnect({
-      appDetails: {
-        name: 'Ecosentinel',
-        icon: window.location.origin + '/vite.svg',
-      },
+      appDetails: { name: 'Ecosentinel', icon: window.location.origin + '/vite.svg' },
       redirectTo: '/',
-      onFinish: () => {
-        window.location.reload();
-      },
+      onFinish: () => window.location.reload(),
       userSession,
     });
   };
@@ -74,35 +35,22 @@ function App() {
 
   return (
     <div className="app-container">
-      <div className="gradient-bg" />
-      <header style={{ padding: '2rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <h1 style={{ fontSize: '2rem', fontWeight: 'bold', background: 'linear-gradient(to right, #fff, #aaa)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-          Ecosentinel
-        </h1>
-        {userData ? (
-          <button onClick={disconnect}>Disconnect</button>
-        ) : (
-          <button onClick={connectWallet}>Connect Wallet</button>
-        )}
-      </header>
-
-      <main style={{ maxWidth: '1200px', margin: '0 auto', padding: '2rem' }}>
-        <div className="glass-card">
-          <h2>Welcome to Ecosentinel</h2>
-          <p style={{ color: 'var(--text-muted)', lineHeight: '1.6' }}>
-            The next generation of blockchain monitoring and interaction.
-            Seamlessly connect your Stacks wallet and interact with the ecosystem.
-          </p>
-          
-          {userData && (
-            <div style={{ marginTop: '2rem', padding: '1rem', background: 'rgba(0,0,0,0.2)', borderRadius: '8px' }}>
-              <p>Connected as: <code>{userData.profile.stxAddress.testnet}</code></p>
-            </div>
-          )}
-        </div>
-      </main>
+       <div className="gradient-bg" />
+       <nav style={{ padding: '1rem 2rem', display: 'flex', justifyContent: 'space-between', backdropFilter: 'blur(10px)', background: 'rgba(0,0,0,0.3)' }}>
+          <div style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>Ecosentinel</div>
+          <div>
+            {!userData && <button onClick={connectWallet}>Stx Connect</button>}
+            {userData && <button onClick={disconnect}>Disconnect</button>}
+          </div>
+       </nav>
+       <main style={{ padding: '2rem', maxWidth: '1000px', margin: '0 auto' }}>
+          <h1>Dashboard</h1>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
+             <ConnectWalletWC />
+             <ChainhooksView />
+          </div>
+       </main>
     </div>
   );
 }
-
 export default App;
