@@ -96,3 +96,5 @@ body {
 
 .glass-card {
   background: hsl(var(--card-bg) / 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid hsl(var(--text-main) / 0.1);
