@@ -10,3 +10,5 @@ export const ChainhooksView: React.FC = () => {
       <p>Monitoring active hooks...</p>
       <button onClick={() => monitor.listen()}>Start Listening</button>
     </div>
+  );
+};
