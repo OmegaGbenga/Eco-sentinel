@@ -9,3 +9,4 @@ export const formatSTX = (microStacks: number): string => {
   return (microStacks / 1000000).toLocaleString('en-US', { 
     minimumFractionDigits: 2, 
     maximumFractionDigits: 6 
+  }) + ' STX';
