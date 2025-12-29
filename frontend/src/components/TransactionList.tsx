@@ -15,3 +15,4 @@ export const TransactionList: React.FC<{ transactions: Transaction[] }> = ({ tra
         <div key={tx.id} style={{ display: 'flex', justifyContent: 'space-between', padding: '1rem', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
            <span>{tx.hash.substr(0, 10)}...</span>
            <span style={{ color: tx.status === 'success' ? '#4caf50' : '#f44336' }}>{tx.status}</span>
+           <span>{tx.amount} STX</span>
