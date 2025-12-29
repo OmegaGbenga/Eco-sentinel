@@ -7,3 +7,4 @@ export const getAccountBalances = async (address: string) => {
   return response.json();
 };
 
+export const getTransactions = async (address: string) => {
