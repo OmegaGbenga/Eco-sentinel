@@ -25,3 +25,4 @@ const userSlice = createSlice({
     setLoading(state, action: PayloadAction<boolean>) {
       state.loading = action.payload;
     },
+  },
