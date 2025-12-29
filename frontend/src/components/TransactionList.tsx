@@ -10,3 +10,4 @@ interface Transaction {
 export const TransactionList: React.FC<{ transactions: Transaction[] }> = ({ transactions }) => {
   return (
     <div className="transaction-list glass-card">
+      <h3>Recent Activity</h3>
