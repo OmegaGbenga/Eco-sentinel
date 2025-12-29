@@ -98,3 +98,5 @@ body {
   background: hsl(var(--card-bg) / 0.6);
   backdrop-filter: blur(12px);
   border: 1px solid hsl(var(--text-main) / 0.1);
+  border-radius: 16px;
+  padding: 2rem;
