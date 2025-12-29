@@ -1,0 +1,149 @@
+[
+    {
+        "name": "Component - Buttons",
+        "files": [
+            {
+                "path": "frontend/src/components/ui/Button.tsx",
+                "content": "import React from 'react';\nexport const Button: React.FC<any> = ({ children, ...props }) => <button {...props}>{children}</button>;"
+            },
+            {
+                "path": "frontend/src/components/ui/IconButton.tsx",
+                "content": "import React from 'react';\nexport const IconButton: React.FC<any> = ({ icon, ...props }) => <button className='icon-btn' {...props}>{icon}</button>;"
+            }
+        ]
+    },
+    {
+        "name": "Component - Inputs",
+        "files": [
+            {
+                "path": "frontend/src/components/ui/Input.tsx",
+                "content": "import React from 'react';\nexport const Input: React.FC<any> = (props) => <input className='std-input' {...props} />;"
+            },
+            {
+                "path": "frontend/src/components/ui/Checkbox.tsx",
+                "content": "import React from 'react';\nexport const Checkbox: React.FC<any> = ({ label, ...props }) => <label><input type='checkbox' {...props} /> {label}</label>;"
+            }
+        ]
+    },
+    {
+        "name": "Component - Cards",
+        "files": [
+            {
+                "path": "frontend/src/components/ui/Card.tsx",
+                "content": "import React from 'react';\nexport const Card: React.FC<any> = ({ children }) => <div className='glass-card'>{children}</div>;"
+            },
+            {
+                "path": "frontend/src/components/ui/CardHeader.tsx",
+                "content": "import React from 'react';\nexport const CardHeader: React.FC<any> = ({ title }) => <div className='card-header'><h3>{title}</h3></div>;"
+            }
+        ]
+    },
+    {
+        "name": "Component - Modals",
+        "files": [
+            {
+                "path": "frontend/src/components/ui/Modal.tsx",
+                "content": "import React from 'react';\nexport const Modal: React.FC<any> = ({ isOpen, children }) => isOpen ? <div className='modal-overlay'><div className='modal'>{children}</div></div> : null;"
+            }
+        ]
+    },
+    {
+        "name": "Component - Alerts",
+        "files": [
+            {
+                "path": "frontend/src/components/ui/Alert.tsx",
+                "content": "import React from 'react';\nexport const Alert: React.FC<any> = ({ type, message }) => <div className={`alert alert-${type}`}>{message}</div>;"
+            }
+        ]
+    },
+    {
+        "name": "Component - Loaders",
+        "files": [
+            {
+                "path": "frontend/src/components/ui/Spinner.tsx",
+                "content": "import React from 'react';\nexport const Spinner: React.FC = () => <div className='spinner'>Loading...</div>;"
+            }
+        ]
+    },
+    {
+        "name": "Component - Avatars",
+        "files": [
+            {
+                "path": "frontend/src/components/ui/Avatar.tsx",
+                "content": "import React from 'react';\nexport const Avatar: React.FC<any> = ({ src, fallback }) => <div className='avatar'><img src={src} alt='avatar' onError={(e:any) => e.target.src=fallback} /></div>;"
+            }
+        ]
+    },
+    {
+        "name": "Component - Badges",
+        "files": [
+            {
+                "path": "frontend/src/components/ui/Badge.tsx",
+                "content": "import React from 'react';\nexport const Badge: React.FC<any> = ({ text, color }) => <span className='badge' style={{ backgroundColor: color }}>{text}</span>;"
+            }
+        ]
+    },
+    {
+        "name": "Component - Tabs",
+        "files": [
+            {
+                "path": "frontend/src/components/ui/Tabs.tsx",
+                "content": "import React from 'react';\nexport const Tabs: React.FC<any> = ({ tabs, active, onChange }) => <div className='tabs'>{tabs.map((t:any) => <div key={t} onClick={()=>onChange(t)} className={active===t?'active':''}>{t}</div>)}</div>;"
+            }
+        ]
+    },
+    {
+        "name": "Component - Tooltips",
+        "files": [
+            {
+                "path": "frontend/src/components/ui/Tooltip.tsx",
+                "content": "import React from 'react';\nexport const Tooltip: React.FC<any> = ({ text, children }) => <div className='tooltip-container'>{children}<span className='tooltip-text'>{text}</span></div>;"
+            }
+        ]
+    },
+    {
+        "name": "Blockchain - Formatters",
+        "files": [
+            {
+                "path": "frontend/src/utils/stacks-helpers.ts",
+                "content": "export const truncateAddress = (addr: string) => `${addr.slice(0,6)}...${addr.slice(-4)}`;\nexport const nanoToStx = (nano: number) => nano / 1000000;"
+            }
+        ]
+    },
+    {
+        "name": "Blockchain - Constants",
+        "files": [
+            {
+                "path": "frontend/src/utils/chain-constants.ts",
+                "content": "export const MAINNET_URL = 'https://api.mainnet.hiro.so';\nexport const TESTNET_URL = 'https://api.testnet.hiro.so';\nexport const EXPLORER_URL = 'https://explorer.hiro.so';"
+            }
+        ]
+    },
+    {
+        "name": "API - Endpoints",
+        "files": [
+            {
+                "path": "frontend/src/api/endpoints.ts",
+                "content": "export const ENDPOINTS = {\n  GET_BALANCE: '/extended/v1/address/{addr}/balances',\n  GET_TXS: '/extended/v1/address/{addr}/transactions',\n  GET_INFO: '/v2/info',\n};"
+            }
+        ]
+    },
+    {
+        "name": "Security - Encryption",
+        "files": [
+            {
+                "path": "frontend/src/security/encryption.ts",
+                "content": "export const simpleEncrypt = (text: string) => btoa(text);\nexport const simpleDecrypt = (text: string) => atob(text);"
+            }
+        ]
+    },
+    {
+        "name": "Security - Validation",
+        "files": [
+            {
+                "path": "frontend/src/security/validation.ts",
+                "content": "export const isValidStxAddress = (addr: string) => addr.startsWith('ST') || addr.startsWith('SP');\nexport const isStrongPassword = (pass: string) => pass.length > 8;"
+            }
+        ]
+    }
+]
