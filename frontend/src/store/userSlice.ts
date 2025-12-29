@@ -22,3 +22,4 @@ const userSlice = createSlice({
     setAddress(state, action: PayloadAction<string>) {
       state.address = action.payload;
     },
+    setLoading(state, action: PayloadAction<boolean>) {
