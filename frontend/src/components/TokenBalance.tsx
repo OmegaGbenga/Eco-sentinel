@@ -7,3 +7,4 @@ export const TokenBalance: React.FC<{ symbol: string, balance: string, icon: str
       <div>
         <div style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>{symbol} Balance</div>
         <div style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>{balance}</div>
+      </div>
