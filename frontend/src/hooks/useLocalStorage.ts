@@ -16,3 +16,4 @@ export const useLocalStorage = (key: string, initialValue: any) => {
     } catch (error) {
       console.log(error);
     }
+  };
