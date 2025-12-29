@@ -1,0 +1,8 @@
+{
+  "app": {
+    "name": "Ecosentinel",
+    "welcome": "欢迎来到 Ecosentinel",
+    "description": "区块链监控"
+  },
+  "nav": {
+    "home": "家",

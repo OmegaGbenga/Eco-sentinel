@@ -7,3 +7,4 @@ export const Accordion: React.FC<any> = ({ title, children }) => {
       {isOpen && <div>{children}</div>}
     </div>
   );
+};
