@@ -5,3 +5,4 @@ interface Transaction {
   hash: string;
   status: 'pending' | 'success' | 'failed';
   amount: string;
+}
