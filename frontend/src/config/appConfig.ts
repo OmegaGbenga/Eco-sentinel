@@ -3,3 +3,6 @@ export const APP_CONFIG = {
   env: 'production',
   maxRetries: 5,
   timeout: 10000,
+  cacheDuration: 3600,
+  features: { darkmode: true, beta: false }
+};
