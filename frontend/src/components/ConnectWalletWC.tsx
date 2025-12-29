@@ -12,3 +12,5 @@ export const ConnectWalletWC: React.FC = () => {
     } catch (e) {
       console.error(e);
     }
+  };
+
