@@ -3,3 +3,4 @@ export const formatDate = (date: Date): string => {
     year: 'numeric',
     month: 'long',
     day: 'numeric'
+  }).format(date);
