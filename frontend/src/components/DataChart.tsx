@@ -14,3 +14,5 @@ export const DataChart: React.FC<{ data: DataPoint[], title: string }> = ({ data
       <div style={{ display: 'flex', alignItems: 'flex-end', height: '200px', gap: '4px', paddingTop: '20px' }}>
         {data.map((point, i) => (
           <div 
+            key={i} 
+            style={{
