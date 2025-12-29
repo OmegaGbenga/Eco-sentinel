@@ -24,3 +24,5 @@ export const ConnectWalletWC: React.FC = () => {
         onChange={e => setUri(e.target.value)}
         style={{ padding: '0.5rem', borderRadius: '4px', border: '1px solid #444', background: '#222', color: 'white', width: '100%', marginBottom: '1rem' }}
       />
+      <button onClick={handleConnect}>Pair Wallet</button>
+    </div>
