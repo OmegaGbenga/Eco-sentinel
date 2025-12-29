@@ -1,0 +1,12 @@
+{
+  "app": {
+    "name": "Ecosentinel",
+    "welcome": "Willkommen bei Ecosentinel",
+    "description": "Blockchain-Überwachung"
+  },
+  "nav": {
+    "home": "Startseite",
+    "about": "Über",
+    "contact": "Kontakt"
+  }
+}
