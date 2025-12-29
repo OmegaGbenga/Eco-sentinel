@@ -16,3 +16,4 @@ export const HelpPage: React.FC = () => {
           <h4>Troubleshooting</h4>
           <p>Common issues and how to resolve them quickly.</p>
         </div>
+        <div className="glass-card">
