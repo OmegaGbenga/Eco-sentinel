@@ -1,0 +1,17 @@
+{
+  "app": {
+    "name": "Ecosentinel",
+    "welcome": "Welcome to Ecosentinel",
+    "description": "Blockchain monitoring"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "auth": {
+    "login": "Login",
+    "logout": "Logout",
+    "signup": "Sign Up"
+  }
+}
