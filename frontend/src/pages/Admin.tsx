@@ -22,3 +22,5 @@ export const AdminPage: React.FC = () => {
 
       <ToastContainer />
     </div>
+  );
+};
