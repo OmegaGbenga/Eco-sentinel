@@ -28,3 +28,4 @@ export const SettingsPage: React.FC = () => {
         <button>Save Changes</button>
       </div>
     </div>
+  );
