@@ -16,3 +16,5 @@ export class ChainhookMonitor {
 
   public async listen() {
     console.log('Listening for events...');
+  }
+}
