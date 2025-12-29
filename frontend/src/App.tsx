@@ -41,3 +41,5 @@ const appConfig = new AppConfig(['store_write', 'publish_data']);
 const userSession = new UserSession({ appConfig });
 
 function App() {
+  const [userData, setUserData] = useState<any>(null);
+
