@@ -28,3 +28,5 @@ export const MapOverview: React.FC = () => {
                 position: 'absolute',
                 top: '50%', left: '50%',
                 transform: 'translate(-50%, -50%)',
+                boxShadow: '0 0 10px #00ff88'
+              }} />
