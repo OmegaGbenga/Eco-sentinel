@@ -11,3 +11,4 @@ export const HelpPage: React.FC = () => {
         <div className="glass-card">
           <h4>Getting Started</h4>
           <p>Learn how to connect your wallet and set up your first sensor.</p>
+        </div>
